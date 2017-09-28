@@ -124,7 +124,7 @@ Then go to Build section and configure Maven build
 ![Configuring Maven build](/images/Selection_131.png)
 
 Choose available Maven version. (If no version is available in dropdown you need to first setup Maven in `Manage Jenkins > Global Tool Configuration`)
-Configure Maven targets which should be executed: `clean install` or `clean package` - the important is to execute phase which is post-integration-test, because this is when Jacoco dump will run as configured in pom.xml.
+Configure Maven targets which should be executed: `clean install` or `clean verify` - the important is to execute phase which is post-integration-test, because this is when Jacoco dump will run as configured in pom.xml.
 Here we will also set profile `staging`.
 
 ![Configuring Maven version and targets](/images/Selection_132.png)
