@@ -78,7 +78,9 @@ It will contain `jacocoagent.jar` in libs folder.
 
 ## 2. Configure Jacoco agent on Tomcat
 Update $TOMCAT_HOME/bin/catalina.sh with Jacoco agent params - set env. variable:
-```JAVA_OPTS="${JAVA_OPTS} -javaagent:<path to jacocoagent.jar>=output=tcpserver,address=*,port=10001"
+
+```
+JAVA_OPTS="${JAVA_OPTS} -javaagent:<path to jacocoagent.jar>=output=tcpserver,address=*,port=10001"
 ```
 
 In the above line replace `<path to jacocoagent.jar>` with an absolute path to jacocoagent.jar extracted in step 1.
