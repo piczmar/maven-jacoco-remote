@@ -1,8 +1,9 @@
 pipeline {
     agent any
     environment{
-        CONN = 'marcin@172.17.0.1'
-        TOMCAT_HOME = '/home/marcin/tools/apache-tomcat-8.5.23'
+        TOMCAT_HOME = "/home/marcin/tools/apache-tomcat-8.5.23"
+        TOMCAT_HOST="172.17.0.1"
+        CONN = "marcin@${TOMCAT_HOST}"
     }
     tools {
         maven 'mvn_3.5'
@@ -38,7 +39,7 @@ pipeline {
         }
         stage ('Functional tests') {
             steps {
-                sh 'mvn verify -Pstaging'
+                sh "mvn verify -Pstaging -Dtomcat.host=${TOMCAT_HOST}"
             }
             post {
                 success {

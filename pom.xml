@@ -65,6 +65,7 @@
 				<skip.integration.tests>true</skip.integration.tests>
 				<skip.unit.tests>false</skip.unit.tests>
 				<jacoco.skip>false</jacoco.skip>
+				<tomcat.host>localhost</tomcat.host>
 			</properties>
 			<build>
 				<plugins>
@@ -85,7 +86,7 @@
 						<artifactId>jacoco-maven-plugin</artifactId>
 						<version>0.7.8</version>
 						<configuration>
-							<address>localhost</address>
+							<address>${tomcat.host}</address>
 							<destFile>${project.build.directory}/jacoco.exec</destFile>
 							<port>10001</port>
 							<reset>true</reset>
