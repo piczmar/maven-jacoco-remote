@@ -26,7 +26,7 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                sh 'ssh ${CONN} rm -R ${TOMCAT_HOME}/webapps/RestDemo-0.0.1*'
+                sh 'ssh ${CONN} rm -fR ${TOMCAT_HOME}/webapps/RestDemo-0.0.1*'
                 sh 'ssh ${CONN} ls ${TOMCAT_HOME}/webapps/'
                 sh 'scp target/RestDemo-0.0.1-SNAPSHOT.war ${CONN}:${TOMCAT_HOME}/webapps/'
             }
